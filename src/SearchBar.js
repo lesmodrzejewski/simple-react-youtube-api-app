@@ -22,6 +22,7 @@ class SearchBar extends React.Component {
             <div>
                 <form onSubmit={this.onSubmitHit}>
                     <label htmlFor="term-input">What video would you like to watch...?</label>
+                    <br/>
                     <input onChange={this.onInputChange} value={this.state.term} type="text"/>
                 </form>
             </div>

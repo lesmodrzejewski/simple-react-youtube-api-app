@@ -1,21 +1,19 @@
 import React from 'react'
 
-const VideoItem = ({ videos }) => {
+const VideoItem = ({ video, onVideoSelect}) => {
+    
+    return (
 
-
-    const renderVideoList = videos.map( video => {
-        return(
-            <div key={video.id.videoId}>
-                <img src={video.snippet.thumbnails.medium.url}/>
-                {/* <p>{video.snippet.description}</p> */}
+            <div onClick={() => onVideoSelect(video)}>
+                <img 
+                    src={video.snippet.thumbnails.medium.url} 
+                    alt={video.snippet.title}
+                />
+                <p>{video.snippet.title}</p>
             </div>
-        )
-    })
 
-    return(
-        <div>{renderVideoList}</div>
     )
-}
+    }
 
 
 export default VideoItem;
